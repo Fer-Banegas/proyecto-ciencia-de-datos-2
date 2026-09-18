@@ -215,7 +215,7 @@ export default function Simulator() {
     </section>
 
     <section className="panel sim-step"><div className="panel-heading"><div><span>PASO 2 · RECURSOS</span><h2>Equipo y combustible</h2></div></div>
-      <div className="sim-field"><label htmlFor="sim-fuel">Precio simulado del diésel (L por litro)</label><input id="sim-fuel" type="number" min="0.01" max="1000" step="0.01" value={fuel} onChange={(e) => {setFuel(e.target.value); setResult(null);}} /><small>Precio del archivo: L {numeric.format(source.fuel_price)}. Si lo cambias, el efecto del precio se suma al de las rutas.</small></div>
+      <div className="sim-field"><label htmlFor="sim-fuel">Precio del diésel para el escenario (L por litro)</label><input id="sim-fuel" type="number" min="0.01" max="1000" step="0.01" value={fuel} onChange={(e) => {setFuel(e.target.value); setResult(null);}} /><small>Precio del archivo: L {numeric.format(source.fuel_price)}. Si lo cambias, el efecto del precio se suma al de las rutas.</small></div>
       <section className="sim-team" aria-labelledby="sim-team-title"><h2 id="sim-team-title">Repartidores del escenario</h2>
         <div className="sim-add-block"><h3>Agregar nuevo repartidor</h3><div className="sim-add"><input value={newName} onChange={(e) => setNewName(e.target.value)} placeholder="Nombre del nuevo repartidor" aria-label="Nombre del nuevo repartidor" maxLength={90}/><button type="button" onClick={addDriver}>Agregar repartidor</button></div></div>
         <p className="sim-help">{activeDrivers.length} activos · {roster.length - activeDrivers.length} inactivos. Ningún cambio borra personas del Excel.</p><div className="sim-chips">{roster.map((person) => {
